@@ -30,9 +30,9 @@ namespace com.CaptainHook
 
         public EventHandler<KeyboardHookMessageEventArgs> onKeyboardMessage;
         public EventHandler<MouseHookMessageEventArgs> onMouseHookMessage;
-        public EventHandler<EventArgs> onHookInstalled;
-        public EventHandler<EventArgs> onHookUninstalled;
-        public EventHandler<EventArgs> onHookError;
+        public EventHandler<EventArgs> onInstalled;
+        public EventHandler<EventArgs> onUninstalled;
+        public EventHandler<EventArgs> onError;
 
         CaptainHook() 
         {
@@ -47,7 +47,7 @@ namespace com.CaptainHook
             if (KeyboardHook == IntPtr.Zero)
                 KeyboardHook = SetWindowsHookEx(HookType.LowLevelKeyboard, keyboardHookProc, IntPtr.Zero, 0);
 
-            onHookInstalled?.Invoke(this, EventArgs.Empty);
+            onInstalled?.Invoke(this, EventArgs.Empty);
         }
         public void Uninstall()
         {
@@ -56,7 +56,7 @@ namespace com.CaptainHook
                 UnhookWindowsHookEx(MouseHook);
                 UnhookWindowsHookEx(KeyboardHook);
                 MouseHook = KeyboardHook = IntPtr.Zero;
-                onHookUninstalled?.Invoke(this, EventArgs.Empty);
+                onUninstalled?.Invoke(this, EventArgs.Empty);
                 isHooksUninstalledAlready = true;
             }
         }
