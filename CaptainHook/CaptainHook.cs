@@ -34,7 +34,7 @@ namespace com.CaptainHook
         public EventHandler<EventArgs> onUninstalled;
         public EventHandler<EventArgs> onError;
 
-        CaptainHook() 
+        public CaptainHook() 
         {
             mouseHookProc = LowLevelMouseProc;
             keyboardHookProc = LowLevelKeyboardProc;
