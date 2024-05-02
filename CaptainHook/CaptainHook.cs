@@ -100,7 +100,7 @@ namespace com.CaptainHook
         //     Dispose(disposing: false);
         // }
 
-        ~CaptainHook() => Dispose(false);
+         ~CaptainHook() => Dispose(false);
 
         public void Dispose()
         {
