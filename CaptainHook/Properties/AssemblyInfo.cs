@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CaptainHook")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Windows Mouse and Keyboard Hooking .NET Framework Library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("SICGames")]
 [assembly: AssemblyProduct("CaptainHook")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
