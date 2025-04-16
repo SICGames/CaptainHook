@@ -47,7 +47,14 @@ namespace com.CaptainHook
             if (KeyboardHook == IntPtr.Zero)
                 KeyboardHook = SetWindowsHookEx(HookType.LowLevelKeyboard, keyboardHookProc, IntPtr.Zero, 0);
 
-            onInstalled?.Invoke(this, EventArgs.Empty);
+            if (MouseHook != IntPtr.Zero && KeyboardHook != IntPtr.Zero)
+            {
+                onInstalled?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                onError?.Invoke(this, EventArgs.Empty);
+            }
         }
         public void Uninstall()
         {
